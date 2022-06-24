@@ -1,5 +1,5 @@
 :root {
-    --main: #e6e6e6;
+    --main: #f2f2f2;
 }
 * {
     box-sizing: border-box;
@@ -11,10 +11,17 @@ body {
     font-size: 12px;
     background-color: var(--main);
 }
-
+header {
+    overflow: auto;
+}
+button {
+    border: none;
+}
+button:hover {
+    background-color: #d8d8d8;
+}
 header button {
     float: right;
-    border: none;
     padding: 4px 15px;
     height: 27px;
     text-align: center;
@@ -32,6 +39,27 @@ header span {
     background-color: #e81123;
     color: white;
 }
-header button:hover {
-    background-color: #cfcfcf;
+nav {
+    overflow: auto;
+}
+nav p, button{
+    float: left;
+}
+#nav-menu {
+    font-size: 1em;
+    padding: 11px 11px;
+    background-color: var(--main);
+}
+nav p {
+    font-size: 1.7em;
+    padding-left: 10px;
+    margin-top: 3px;
+}
+#nav-time-machine {
+    background-color: var(--main);
+    float: right;
+    padding: 9px 11px;
+}
+#nav-time-machine:hover, #nav-menu:hover {
+    background-color: #d8d8d8;
 }
