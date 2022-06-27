@@ -20,8 +20,8 @@
         <button id="minimize" title="Minimize">&minus;</button>
       </div>
     </header>
-    <div class="grid-layout">
-      <div class="grid-top">
+    <div class="layout-main">
+      <div class="layout-top">
         <nav>
           <button id="nav-menu" title="Open Navigation">
             <img src="icons/menu.png" />
@@ -36,7 +36,7 @@
         </nav>
         <div class="top-flex">
           <div class="display">
-            <h1>569,143,870</h1>
+            <h1>0</h1>
           </div>
 
           <div class="memory-ctl">
@@ -87,12 +87,17 @@
           </div>
         </div>
       </div>
-      <div class="grid-right">
+      <div class="layout-right">
         <div class="history-bar">
-          <h3>History</h3>
+          <div class="title-container">
+            <p id="hb-selected">History</p>
+            <p>Memory</p>
+          </div>
+          <div class="hb-text">
+            <p>There's no history yet</p>
+          </div>
         </div>
       </div>
-      <div class="grid-bottom"></div>
     </div>
   </body>
 </html>
