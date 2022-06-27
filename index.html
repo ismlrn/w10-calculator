@@ -20,38 +20,79 @@
         <button id="minimize" title="Minimize">&minus;</button>
       </div>
     </header>
-    <nav>
-      <button id="nav-menu"><img src="icons/menu.png" /></button>
-      <p>Standard</p>
-      <button id="nav-time-machine">
-        <img
-          width="20px"
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABvklEQVRYhe3Wu24TQRQG4C+IAgk3SBSQcA2RoKHiCWiBQAUSoDwBVNgSz0FH0iMhSCIF4XehCRQB0UKgMYkxxczI0eLL7Kyp8C+NZnf2XP49e/acwxz/OxZqyi/jAW7iOk6hjz18Qhc7+DxDjuASXkdngynrABtYLHWWDCWs4Wc86+EV7uMiTuAkruJhJNmLsvtYbUrg+ZH7bVzI0F/GZtTp42kpgbUjRp5lkK2ijcOoXysSyWgKeydDdhza8fl3nK1LYID3mbKTsBVl1ksIVFcJgStCYh5gqfrwWC6rBtgVasNx3MshsDBhlWIn7rca2BiJnE9AqBMDfPhXBKblSyue/agaGPUJ9qNwa4ZEk5/fOQS+xj2nlufmS7L1JYfAbtxvZBDIRbL1MYdAN+5//TINkGx1J0pFnBOKRk9oLE2xYkIhGocNIRE3Z0BgO9p6WUdp0fBvaDdw3ok2vuFMXeVVoZUeFpLoGLbj2wX6CMNEGsO2hMYyDSuGYe/jSanzhDtCP08j2Rs8wjWhWLXi9WO8xS/DsBe/eRWn8ULI5JyhdF3mAFK3wy3hrhCVyzgfz/eEItPFOyMq3hxzjMMfrE2WK9qpBckAAAAASUVORK5CYII="
-        />
-      </button>
-    </nav>
-    <div class="display">
-      <h1>569,143,870</h1>
-    </div>
-    <div class="memory-ctl">
-      <div>
-        <button id="mc-btn" class="mem-btn" disabled>MC</button>
+    <div class="grid-layout">
+      <div class="grid-top">
+        <nav>
+          <button id="nav-menu" title="Open Navigation">
+            <img src="icons/menu.png" />
+          </button>
+          <p>Standard</p>
+          <button id="nav-time-machine" title="History (Ctrl+H)">
+            <img
+              width="20px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABvklEQVRYhe3Wu24TQRQG4C+IAgk3SBSQcA2RoKHiCWiBQAUSoDwBVNgSz0FH0iMhSCIF4XehCRQB0UKgMYkxxczI0eLL7Kyp8C+NZnf2XP49e/acwxz/OxZqyi/jAW7iOk6hjz18Qhc7+DxDjuASXkdngynrABtYLHWWDCWs4Wc86+EV7uMiTuAkruJhJNmLsvtYbUrg+ZH7bVzI0F/GZtTp42kpgbUjRp5lkK2ijcOoXysSyWgKeydDdhza8fl3nK1LYID3mbKTsBVl1ksIVFcJgStCYh5gqfrwWC6rBtgVasNx3MshsDBhlWIn7rca2BiJnE9AqBMDfPhXBKblSyue/agaGPUJ9qNwa4ZEk5/fOQS+xj2nlufmS7L1JYfAbtxvZBDIRbL1MYdAN+5//TINkGx1J0pFnBOKRk9oLE2xYkIhGocNIRE3Z0BgO9p6WUdp0fBvaDdw3ok2vuFMXeVVoZUeFpLoGLbj2wX6CMNEGsO2hMYyDSuGYe/jSanzhDtCP08j2Rs8wjWhWLXi9WO8xS/DsBe/eRWn8ULI5JyhdF3mAFK3wy3hrhCVyzgfz/eEItPFOyMq3hxzjMMfrE2WK9qpBckAAAAASUVORK5CYII="
+            />
+          </button>
+        </nav>
+        <div class="top-flex">
+          <div class="display">
+            <h1>569,143,870</h1>
+          </div>
+
+          <div class="memory-ctl">
+            <div>
+              <button
+                id="mc-btn"
+                class="mem-btn"
+                title="Clear all memory (Ctrl+L)"
+                disabled
+              >
+                MC
+              </button>
+            </div>
+            <div>
+              <button
+                id="mr-btn"
+                class="mem-btn"
+                title="Memory recall (Ctrl+R)"
+                disabled
+              >
+                MR
+              </button>
+            </div>
+            <div>
+              <button id="mp-btn" class="mem-btn" title="Memory add (Ctrl+P)">
+                M+
+              </button>
+            </div>
+            <div>
+              <button
+                id="mm-btn"
+                class="mem-btn"
+                title="Memory subtract (Ctrl+Q)"
+              >
+                M-
+              </button>
+            </div>
+            <div>
+              <button id="ms-btn" class="mem-btn" title="Memory store (Ctrl+M)">
+                MS
+              </button>
+            </div>
+            <div id="mu-div">
+              <button class="mem-btn" id="mu-btn" title="Memory" disabled>
+                M<sup>&#9662;</sup>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <button id="mr-btn" class="mem-btn" disabled>MR</button>
+      <div class="grid-right">
+        <div class="history-bar">
+          <h3>History</h3>
+        </div>
       </div>
-      <div>
-        <button id="mp-btn" class="mem-btn">M+</button>
-      </div>
-      <div>
-        <button id="mm-btn" class="mem-btn">M-</button>
-      </div>
-      <div>
-        <button id="ms-btn" class="mem-btn">MS</button>
-      </div>
-      <div id="mu-btn">
-        <button class="mem-btn" disabled>M<sup>&#9662;</sup></button>
-      </div>
+      <div class="grid-bottom"></div>
     </div>
   </body>
 </html>
