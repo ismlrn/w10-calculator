@@ -241,3 +241,43 @@ nav p {
         display: block;
     }
 }
+.num-power3 { display: none; }
+/* Defining grid area for reshaping numpad */
+
+@media only screen and (min-width: 1020px) {
+    .num-per { grid-area: num-per; }
+    .num-sqr { grid-area: num-sqr; }
+    .num-power { grid-area: num-power; }
+    .num-power3 {
+        display: contents;
+        grid-area: num-power3;
+    }
+    .num-fraction { grid-area: num-fraction; }
+    .num-clt { grid-area: num-clt; }
+    .num-cle { grid-area: num-cle; }
+    .num-erase { grid-area: num-erase; }
+    .num-div { grid-area: num-div; }
+    .num-seven { grid-area: num-seven; }
+    .num-eight { grid-area: num-eight; }
+    .num-nine { grid-area: num-nine; }
+    .num-multi { grid-area: num-multi; }
+    .num-four { grid-area: num-four; }
+    .num-five { grid-area: num-five; }
+    .num-six { grid-area: num-six;}
+    .num-minus { grid-area: num-minus; }
+    .num-one { grid-area: num-one; }
+    .num-two { grid-area: num-two; }
+    .num-three { grid-area: num-three; }
+    .num-plus { grid-area: num-plus; }
+    .num-minplus { grid-area: num-minplus; }
+    .num-zero { grid-area: num-zero; }
+    .num-dot { grid-area: num-dot; }
+    .num-equal { grid-area: num-equal; }
+    .grid-nums {
+        grid-template-areas: 'num-per num-clt num-cle num-erase num-div'
+                            'num-sqr num-seven num-eight num-nine num-multi'
+                            'num-power num-four num-five num-six num-minus'
+                            'num-power3 num-one num-two num-three num-plus'
+                            'num-fraction num-minplus num-zero num-dot num-equal';
+    }
+}
