@@ -1,25 +1,28 @@
 :root {
     --main: #f2f2f2;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 12px;
     background-color: var(--main);
+    overflow: hidden;
 }
+
 header {
     overflow: auto;
 }
+
 button {
     border: none;
 }
-button:hover {
-    background-color: #d8d8d8;
-}
+
 header button {
     float: right;
     padding: 4px 15px;
@@ -28,47 +31,64 @@ header button {
     background-color: var(--main);
     font-size: 1em;
 }
+
 header button:not(#close) {
     width: 40px;
 }
+
 header span {
     float: left;
     padding: 7px 12px;
 }
+
+button:hover {
+    background-color: #d8d8d8;
+}
+
 #close:hover {
     background-color: #e81123;
     color: white;
 }
+
 nav {
     overflow: auto;
 }
-nav p, button{
+
+nav p,
+button {
     float: left;
 }
+
 #nav-menu {
     font-size: 1em;
     padding: 11px 11px;
     background-color: var(--main);
 }
+
 nav p {
     font-size: 1.7em;
     padding-left: 10px;
     margin-top: 3px;
 }
+
 #nav-time-machine {
     background-color: var(--main);
     float: right;
     padding: 9px 11px;
 }
-#nav-time-machine:hover, #nav-menu:hover {
+
+#nav-time-machine:hover,
+#nav-menu:hover {
     background-color: #d8d8d8;
 }
-.top-flex {
+
+.display-container {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: 26vh;
+    height: 124px;
 }
+
 .display {
     flex: 75%;
     height: auto;
@@ -85,62 +105,54 @@ nav p {
     max-width: 560px;
     display: flex;
     flex-wrap: nowrap;
-    flex-align: center;
+    text-align: center;
     flex: 25%;
     min-height: 30px;
+    overflow: hidden;
 }
-.memory-ctl > div {
+
+.memory-ctl>div {
     width: 80px;
     margin: 0;
     font-size: 0.9em;
 }
-.mem-btn  {
+
+.mem-btn {
     width: 100%;
     height: 100%;
     font-weight: 500;
 }
+
 #mu-div {
     margin-left: auto;
     order: 2;
 }
-#mu-btn > sup {
+
+#mu-btn>sup {
     margin: 0;
     padding: 0;
     font-size: 0.6em;
 }
+
+@media only screen and (min-height: 464px) {
+    .display-container {
+        height: 26vh;
+    }
+}
+
 @media only screen and (min-height: 750px) {
     .display h1 {
         font-size: 6em;
         font-weight: 600;
     }
 }
-.layout-right {
-    display: none;
-}
-@media only screen and (min-width: 560px) {
-    /* hide clock icon and memory button */
-    #mu-div, #nav-time-machine {
-        display: none;
-    }
-    .layout-right {
-        display: block;
-        width: 320px;
-    }
-    .layout-main {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        flex: 60%;
-    }
-}
-.layout-top {
-    flex-grow: 1;
-}
+
 .title-container {
     display: block;
     min-width: 180px;
     overflow: hidden;
 }
+
 .layout-right p {
     display: inline-block;
     font-size: 1.3em;
@@ -149,13 +161,86 @@ nav p {
     font-weight: 600;
     border: none;
 }
+
 #hb-selected {
     float: left;
     border-bottom: 4px solid blue;
 }
+
 .hb-text p {
     font-size: 1.1em;
     font-weight: 700;
     margin-left: 10px;
     margin-top: 23px;
+}
+
+.layout-right {
+    display: none;
+}
+
+.layout-top {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.layout-bottom {
+    display: inline-block;
+    width: 100%;
+    height: 66vh;
+    flex-grow: 1;
+    align-self: stretch;
+}
+
+.grid-nums {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+    height: 100%;
+
+}
+
+.grid-nums div {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.grid-nums button {
+    background-color: aqua;
+    width: 100%;
+    height: 100%;
+}
+
+.numpad {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+
+}
+
+@media only screen and (min-width: 560px) {
+
+    /* hide clock icon and memory button */
+    #mu-div,
+    #nav-time-machine {
+        display: none;
+    }
+
+    .layout-right {
+        display: inline-block;
+        width: 320px;
+    }
+
+    .layout-main {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        clear: both;
+
+
+    }
+
+    .layout-bottom {
+        display: block;
+    }
 }
