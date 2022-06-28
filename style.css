@@ -1,5 +1,9 @@
 :root {
     --main: #f2f2f2;
+    --non-number: #f8f8f8;
+    --number: #fdfdfd;
+    --numpad-hover: #1986db;
+    --number-hover: #dedede;
 }
 
 * {
@@ -21,6 +25,7 @@ header {
 
 button {
     border: none;
+    background-color: var(--main);
 }
 
 header button {
@@ -28,7 +33,6 @@ header button {
     padding: 4px 15px;
     height: 27px;
     text-align: center;
-    background-color: var(--main);
     font-size: 1em;
 }
 
@@ -42,7 +46,7 @@ header span {
 }
 
 button:hover {
-    background-color: #d8d8d8;
+    background-color: var(--number-hover);
 }
 
 #close:hover {
@@ -62,7 +66,6 @@ button {
 #nav-menu {
     font-size: 1em;
     padding: 11px 11px;
-    background-color: var(--main);
 }
 
 nav p {
@@ -72,16 +75,9 @@ nav p {
 }
 
 #nav-time-machine {
-    background-color: var(--main);
     float: right;
     padding: 9px 11px;
 }
-
-#nav-time-machine:hover,
-#nav-menu:hover {
-    background-color: #d8d8d8;
-}
-
 .display-container {
     display: flex;
     flex-wrap: nowrap;
@@ -110,13 +106,11 @@ nav p {
     min-height: 30px;
     overflow: hidden;
 }
-
 .memory-ctl>div {
     width: 80px;
     margin: 0;
     font-size: 0.9em;
 }
-
 .mem-btn {
     width: 100%;
     height: 100%;
@@ -164,7 +158,7 @@ nav p {
 
 #hb-selected {
     float: left;
-    border-bottom: 4px solid blue;
+    border-bottom: 4px solid var(--numpad-hover);
 }
 
 .hb-text p {
@@ -196,28 +190,34 @@ nav p {
 .grid-nums {
     display: grid;
     grid-template-columns: auto auto auto auto;
-
+    gap: 2px 2px;
     height: 100%;
-
+    background-color: var(--main);
 }
 
 .grid-nums div {
-    border: 1px solid black;
     text-align: center;
 }
 
 .grid-nums button {
-    background-color: aqua;
     width: 100%;
     height: 100%;
+    padding: 5px;
 }
-
-.numpad {
-    background-color: rgba(255, 255, 255, 0.8);
-    font-size: 30px;
-
+.number {
+    background-color: var(--number);
+    font-size: 1.8em;
+    font-weight: 600;
 }
-
+.non-number {
+    background-color: var(--non-number);
+    font-size: 1.6em;
+    font-weight: 300;
+}
+.operations-hover:hover {
+    background-color: var(--numpad-hover);
+    color: white;
+}
 @media only screen and (min-width: 560px) {
 
     /* hide clock icon and memory button */
@@ -236,10 +236,7 @@ nav p {
         flex-wrap: nowrap;
         justify-content: flex-start;
         clear: both;
-
-
     }
-
     .layout-bottom {
         display: block;
     }
