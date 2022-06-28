@@ -18,9 +18,8 @@ body {
     background-color: var(--main);
     overflow: hidden;
 }
-
 header {
-    overflow: auto;
+    overflow: hidden;
 }
 
 button {
@@ -53,11 +52,6 @@ button:hover {
     background-color: #e81123;
     color: white;
 }
-
-nav {
-    overflow: auto;
-}
-
 nav p,
 button {
     float: left;
@@ -68,7 +62,7 @@ button {
     padding: 11px 11px;
 }
 
-nav p {
+nav > p {
     font-size: 1.7em;
     padding-left: 10px;
     margin-top: 3px;
@@ -86,7 +80,7 @@ nav p {
 }
 
 .display {
-    flex: 75%;
+    flex: 70%;
     height: auto;
 }
 
@@ -155,7 +149,6 @@ nav p {
     font-weight: 600;
     border: none;
 }
-
 #hb-selected {
     float: left;
     border-bottom: 4px solid var(--numpad-hover);
@@ -242,9 +235,9 @@ nav p {
     }
 }
 .num-power3 { display: none; }
-/* Defining grid area for reshaping numpad */
 
-@media only screen and (min-width: 1020px) {
+/* Defining grid area for reshaping numpad */
+@media only screen and (min-width: 1020px) and (min-height: 640px) {
     .num-per { grid-area: num-per; }
     .num-sqr { grid-area: num-sqr; }
     .num-power { grid-area: num-power; }
@@ -280,4 +273,19 @@ nav p {
                             'num-power3 num-one num-two num-three num-plus'
                             'num-fraction num-minplus num-zero num-dot num-equal';
     }
+}
+@media only screen and (min-width: 1200px) and (min-height: 700px) {
+    .number {
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+    
+    .non-number {
+            font-size: 2.1em;
+            font-weight: 200;
+        }
+    .mem-btn {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
 }
