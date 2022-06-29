@@ -9,21 +9,22 @@
     <title>Calculator</title>
   </head>
   <body>
-    <header>
-      <span class="title">Calculator</span>
-      <div class="icons">
-        <button id="close" title="Close">&#x2715;</button>
-        <button id="maximize" title="Maximize">&#9744;</button>
-        <button id="minimize" title="Minimize">&minus;</button>
-      </div>
-    </header>
     <div class="layout-main">
-      <div class="layout-top">
+      <header class="header">
+        <span class="title">Calculator</span>
+        <div class="icons">
+          <button id="close" title="Close">&#x2715;</button>
+          <button id="maximize" title="Maximize">&#9744;</button>
+          <button id="minimize" title="Minimize">&minus;</button>
+        </div>
+      </header>
+
+      <div class="display-container">
         <nav>
           <button id="nav-menu" title="Open Navigation">
             <img src="icons/menu.png" />
           </button>
-          <p>Standard</p>
+          <h3 id="nav-h3">Standard</h3>
           <button id="nav-time-machine" title="History (Ctrl+H)">
             <img
               width="20px"
@@ -31,152 +32,102 @@
             />
           </button>
         </nav>
-
-        <div class="display-container">
-          <div class="display">
-            <h1>0</h1>
-          </div>
-
-          <div class="memory-ctl">
-            <div>
-              <button
-                id="mc-btn"
-                class="mem-btn"
-                title="Clear all memory (Ctrl+L)"
-                disabled
-              >
-                MC
-              </button>
-            </div>
-
-            <div>
-              <button
-                id="mr-btn"
-                class="mem-btn"
-                title="Memory recall (Ctrl+R)"
-                disabled
-              >
-                MR
-              </button>
-            </div>
-
-            <div>
-              <button id="mp-btn" class="mem-btn" title="Memory add (Ctrl+P)">
-                M+
-              </button>
-            </div>
-            <div>
-              <button
-                id="mm-btn"
-                class="mem-btn"
-                title="Memory subtract (Ctrl+Q)"
-              >
-                M-
-              </button>
-            </div>
-            <div>
-              <button id="ms-btn" class="mem-btn" title="Memory store (Ctrl+M)">
-                MS
-              </button>
-            </div>
-            <div id="mu-div">
-              <button class="mem-btn" id="mu-btn" title="Memory" disabled>
-                M<sup>&#9662;</sup>
-              </button>
-            </div>
-          </div>
+        <div class="display">
+          <h1>0</h1>
         </div>
-        <div class="layout-bottom">
-          <div class="grid-nums">
-            <div class="numpad num-per">
-              <button class="non-number">&percnt;</button>
-            </div>
-            <div class="numpad num-sqr">
-              <button class="non-number">&#8730;</button>
-            </div>
-            <div class="numpad num-power">
-              <button class="non-number">&#x1d499;&#xB2;</button>
-            </div>
-            <div class="numpad num-power3">
-              <button class="non-number">&#x1d499;&#xB3;</button>
-            </div>
-            <div class="numpad num-fraction">
-              <button class="non-number">&#x215f;&#x1d499;</button>
-            </div>
-            <div class="numpad num-clt">
-              <button class="non-number">CE</button>
-            </div>
-            <div class="numpad num-cle">
-              <button class="non-number">C</button>
-            </div>
-            <div class="numpad num-erase">
-              <button class="non-number">&#x232b;</button>
-            </div>
-            <div class="numpad num-div">
-              <button class="non-number operations-hover">&#xf7;</button>
-            </div>
-            <div class="numpad num-seven">
-              <button class="number">7</button>
-            </div>
-            <div class="numpad num-eight">
-              <button class="number">8</button>
-            </div>
-            <div class="numpad num-nine">
-              <button class="number">9</button>
-            </div>
-            <div class="numpad num-multi">
-              <button class="non-number operations-hover">&#xd7;</button>
-            </div>
-            <div class="numpad num-four">
-              <button class="number">4</button>
-            </div>
-            <div class="numpad num-five">
-              <button class="number">5</button>
-            </div>
-            <div class="numpad num-six">
-              <button class="number">6</button>
-            </div>
-            <div class="numpad num-minus">
-              <button class="non-number operations-hover">&#x2212;</button>
-            </div>
-            <div class="numpad num-one">
-              <button class="number">1</button>
-            </div>
-            <div class="numpad num-two">
-              <button class="number">2</button>
-            </div>
-            <div class="numpad num-three">
-              <button class="number">3</button>
-            </div>
-            <div class="numpad num-plus">
-              <button class="non-number operations-hover">&#43;</button>
-            </div>
-            <div class="numpad num-minplus">
-              <button class="non-number">&#xb1;</button>
-            </div>
-            <div class="numpad num-zero">
-              <button class="number">0</button>
-            </div>
-            <div class="numpad num-dot">
-              <button class="non-number">.</button>
-            </div>
-            <div class="numpad num-equal">
-              <button class="non-number operations-hover">&#x3D;</button>
-            </div>
+
+        <div class="memory-ctl">
+          <div>
+            <button
+              id="mc-btn"
+              class="mem-btn"
+              title="Clear all memory (Ctrl+L)"
+              disabled
+            >
+              MC
+            </button>
+          </div>
+
+          <div>
+            <button
+              id="mr-btn"
+              class="mem-btn"
+              title="Memory recall (Ctrl+R)"
+              disabled
+            >
+              MR
+            </button>
+          </div>
+
+          <div>
+            <button id="mp-btn" class="mem-btn" title="Memory add (Ctrl+P)">
+              M+
+            </button>
+          </div>
+          <div>
+            <button
+              id="mm-btn"
+              class="mem-btn"
+              title="Memory subtract (Ctrl+Q)"
+            >
+              M-
+            </button>
+          </div>
+          <div>
+            <button id="ms-btn" class="mem-btn" title="Memory store (Ctrl+M)">
+              MS
+            </button>
+          </div>
+
+          <div id="mu-div">
+            <button class="mem-btn" id="mu-btn" title="Memory" disabled>
+              M<sup>&#9662;</sup>
+            </button>
           </div>
         </div>
       </div>
 
-      <div class="layout-right">
-        <div class="history-bar">
-          <div class="title-container">
-            <p id="hb-selected">History</p>
-            <p>Memory</p>
-          </div>
-          <div class="hb-text">
-            <p>There's no history yet</p>
-          </div>
+      <div class="history-bar">
+        <div class="title-container">
+          <p id="hb-selected" class="htitles">History</p>
+          <p class="htitles">Memory</p>
         </div>
+        <div class="hb-text">
+          <p>There's no history yet</p>
+        </div>
+      </div>
+      <div class="numpad">
+        <button class="non-number operators">&percnt;</button>
+        <button class="non-number operators order1">&#8730;</button>
+        <button class="non-number x-operators order2">&#x1d499;&#xB2;</button>
+        <button class="non-number x-operators order4">&#x215f;&#x1d499;</button>
+        <button class="non-number bold-operators">CE</button>
+        <button class="non-number bold-operators">C</button>
+        <button class="non-number">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACdUlEQVRYhe2WP2gUURDGv3m3txDh/ANGsDCFVx/cvrdLiIIeEkgCMa0WghgMCDZpJFaCWAULbWz8ExELsYogaDTaCYfszm6s5cAughKEgwRO7j0LPdl42c0mt8HmfuXuvPm+mR1mH9Cnz3+GMsSIarU6VCwWRZ7CWusNZl5NNaCUKgJ4AeAUgJ95GgAwAOCxlRJAAO4DOGDb9pF6vb6Rp7pSagjA58S2SilvARi2bXsqb3EAaLVaTQD2lh2QUs4Q0aV2u32yXq+v5S0ep6sDUspJIponosmVlZUv2yVwHGfQ87zj28VJKVWtVusqeJMBz/M8InoK4HwQBNF2SQGAiKTW+qPruk5SjFLqMhEtNZvNg4kGlFJlrfVLALPM/DaLOACEYfiGiOaMMe88z/P+fe+67jSAea31BDN/39KA4ziDAF4DuMPMT7KKdwiCYIGIrmmtl+ImXNedNsbc1lqPRVEUbHWWlFL7ALw3xnwKw/DKTsXjdASFEOPGmEqaeKVSOWTb9poA8BzAarlcvtqLOPC7EwDmtNbLxph5IhpNqrxDrut1NwgA5wAcbTQa93pNFhu40bTB3GSAmde11lNEdEYpdb0X8fg3TxrMLgMAEEXRNwATAGaVUhd7Fe88z2Li7wwwc0MIcRbAXSnlWFZxKeVY2sDFBvOVUupwogEA8H3fB3CBiJ6lbbY4RMRCiOG0zcnMD40x46VS6UfX+YSqZojoZrvdPpHlf7Ab4nugizAMHwB4VCgUlv9syT0jcQ8w8w0AH4QQiyMjIwN5C1uWtR9AK8uVbBHAaezNlWwh06XUcZxjlmUVcjaw7vv+15xz9umzc34BJcUXZoTrPFMAAAAASUVORK5CYII="
+          />
+        </button>
+        <button class="non-number operations-hover">&#xf7;</button>
+        <button class="number order1">7</button>
+        <button class="number order1">8</button>
+        <button class="number order1">9</button>
+        <button class="non-number operations-hover order1">&#xd7;</button>
+        <button class="number order2">4</button>
+        <button class="number order2">5</button>
+        <button class="number order2">6</button>
+        <button class="non-number operations-hover order2">&#x2212;</button>
+        <button id="num-power3" class="non-number x-operators order3">
+          &#x1d499;&#xB3;
+        </button>
+        <button class="number order3">1</button>
+        <button class="number order3">2</button>
+        <button class="number order3">3</button>
+        <button class="non-number operations-hover order3">&#43;</button>
+        <button class="non-number operators order4">&#xb1;</button>
+        <button class="number order4">0</button>
+        <button class="non-number operators bold-operators order4">.</button>
+        <button class="non-number operations-hover order4">&#x3D;</button>
       </div>
     </div>
   </body>
