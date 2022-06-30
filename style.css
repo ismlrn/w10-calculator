@@ -49,6 +49,7 @@ body {
     flex-direction: column;
     height: 32vh;
     min-height: 120px;
+    width: 100vw;
 }
 /* minimum width of window's calculator width is 240px and maximum width is 320px */
 .history-bar {
@@ -145,7 +146,7 @@ button {
 }
 
 .memory-ctl {
-    max-width: 525px;
+    max-width: 532px;
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
@@ -155,7 +156,7 @@ button {
 }
 
 .memory-ctl>div {
-    width: 75px;
+    width: 80px;
     margin: 0;
 }
 
@@ -348,7 +349,10 @@ only screen and (min-height: 650px) and (min-width: 1024px) {
 }
 
 /* disapring history bar when window's width is less than 500px */
-@media only screen and (min-width: 525px) {
+@media only screen and (min-width: 530px) {
+    .display-container {
+        width: 100%;
+    }
     .history-bar {
         display: block;
     }
