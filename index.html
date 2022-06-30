@@ -15,7 +15,13 @@
         <div class="icons">
           <button id="close" title="Close">&#x2715;</button>
           <button id="maximize" title="Maximize">&#9744;</button>
-          <button id="minimize" title="Minimize">&minus;</button>
+          <button id="restore-down" title="Restore Down">
+            <img
+              width="14px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABaklEQVRoge2Y30rDMBSHP73oU4ytDyIiW+sLCvvzIr6M4CwT79Tp7Qb1IkqzulSbnSQWzweBUtJzfr80OaUHFEX5l0yAG+AO2AG18NgDG2AJ5NLiZ8BrANGu8Q6UUuJHkcV/jTfMWx8MGVAAFY2JRVJFnpQ0BqrEWrzIODzYvcmBFaYi7JHf23a1ce1xe34vrjEVIOZBLaQM5JHF2ybGEgZW1kP3wBSzH6XJMN+VtZWvXW28DGysh6Yny/yZmZWvXW28DNgHNsTKt+mqNp0GzhwB61/MkcaVs1PLeTA5kVADqVEDqVEDqVEDqVEDqVEDqRmSgd2xm0My8HDs5pAM3PaZ7N3KOAFXzhp44fvPvlewkLhyPgNXUsFC4so58gn2l37qO3Ed4ifr+sJTVB8uretHiYBLmhVZY1p+oRpbJYeNrblE4AmmzRe7tbilZ7XpoohsYovp0IkyxrzSinDt9eozh9jKK4oyID4Axc5UgeRD5GoAAAAASUVORK5CYII="
+            />
+          </button>
+          <button id="minimize" title="Minimize"><h3>&minus;</h3></button>
         </div>
       </header>
 
@@ -97,14 +103,18 @@
         </div>
       </div>
       <div class="numpad">
-        <button class="non-number operators">&percnt;</button>
-        <button class="non-number operators order1">&#8730;</button>
+        <button id="percent" class="non-number operators">&percnt;</button>
+        <button id="squareroot" class="non-number operators order1">
+          &#8730;
+        </button>
         <button class="non-number x-operators order2">&#x1d499;&#xB2;</button>
         <button class="non-number x-operators order4">&#x215f;&#x1d499;</button>
         <button class="non-number bold-operators">CE</button>
         <button class="non-number bold-operators">C</button>
         <button class="non-number">
           <img
+            id="backspace"
+            width="25px"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACdUlEQVRYhe2WP2gUURDGv3m3txDh/ANGsDCFVx/cvrdLiIIeEkgCMa0WghgMCDZpJFaCWAULbWz8ExELsYogaDTaCYfszm6s5cAughKEgwRO7j0LPdl42c0mt8HmfuXuvPm+mR1mH9Cnz3+GMsSIarU6VCwWRZ7CWusNZl5NNaCUKgJ4AeAUgJ95GgAwAOCxlRJAAO4DOGDb9pF6vb6Rp7pSagjA58S2SilvARi2bXsqb3EAaLVaTQD2lh2QUs4Q0aV2u32yXq+v5S0ep6sDUspJIponosmVlZUv2yVwHGfQ87zj28VJKVWtVusqeJMBz/M8InoK4HwQBNF2SQGAiKTW+qPruk5SjFLqMhEtNZvNg4kGlFJlrfVLALPM/DaLOACEYfiGiOaMMe88z/P+fe+67jSAea31BDN/39KA4ziDAF4DuMPMT7KKdwiCYIGIrmmtl+ImXNedNsbc1lqPRVEUbHWWlFL7ALw3xnwKw/DKTsXjdASFEOPGmEqaeKVSOWTb9poA8BzAarlcvtqLOPC7EwDmtNbLxph5IhpNqrxDrut1NwgA5wAcbTQa93pNFhu40bTB3GSAmde11lNEdEYpdb0X8fg3TxrMLgMAEEXRNwATAGaVUhd7Fe88z2Li7wwwc0MIcRbAXSnlWFZxKeVY2sDFBvOVUupwogEA8H3fB3CBiJ6lbbY4RMRCiOG0zcnMD40x46VS6UfX+YSqZojoZrvdPpHlf7Ab4nugizAMHwB4VCgUlv9syT0jcQ8w8w0AH4QQiyMjIwN5C1uWtR9AK8uVbBHAaezNlWwh06XUcZxjlmUVcjaw7vv+15xz9umzc34BJcUXZoTrPFMAAAAASUVORK5CYII="
           />
         </button>
@@ -124,9 +134,14 @@
         <button class="number order3">2</button>
         <button class="number order3">3</button>
         <button class="non-number operations-hover order3">&#43;</button>
-        <button class="non-number operators order4">&#xb1;</button>
+        <button id="minplus" class="non-number operators order4">&#xb1;</button>
         <button class="number order4">0</button>
-        <button class="non-number operators bold-operators order4">.</button>
+        <button
+          id="decimaldot"
+          class="non-number operators bold-operators order4"
+        >
+          .
+        </button>
         <button class="non-number operations-hover order4">&#x3D;</button>
       </div>
     </div>

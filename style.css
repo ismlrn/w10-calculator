@@ -5,8 +5,8 @@
     font-family: Arial, sans-serif;
 */
 :root {
-    --main: #f2f2f2;
-    --non-number: #f8f8f8;
+    --main: #f0f0f0;
+    --non-number: #f4f4f4;
     --number: #fdfdfd;
     --numpad-hover: #1986db;
     --number-hover: #dedede;
@@ -24,7 +24,7 @@ body {
     background-color: var(--main);
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .layout-main {
     width: 100%;
@@ -40,15 +40,15 @@ body {
     grid-area: header;
     width: 100vw;
 }
+
 /* for better result display: 46vh and numpad 50vh */
 .display-container {
-    width: 100%;
     grid-area: display;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: 36vh;
-    min-height: 168px;
+    height: 32vh;
+    min-height: 120px;
 }
 /* minimum width of window's calculator width is 240px and maximum width is 320px */
 .history-bar {
@@ -94,7 +94,9 @@ header span {
     padding: 7px 12px;
     font-weight: 600;
 }
-
+#restore-down {
+    display: none;
+}
 #close:hover {
     background-color: #e81123;
     color: white;
@@ -103,7 +105,7 @@ header span {
 /* display styles */
 nav {
     overflow: hidden;
-    height: 56px;
+    min-height: 40px;
 }
 
 nav h3,
@@ -131,15 +133,15 @@ button {
 }
 
 .display {
-    flex: 70%;
-    height: auto;
+    flex: 30%;
+    min-height: 60px;
 }
 
 .display h1 {
     direction: rtl;
     font-weight: 600;
-    font-size: 5.5em;
-    padding: 10px 15px;
+    font-size: 3.5em;
+    padding: 0px 15px;
 }
 
 .memory-ctl {
@@ -147,21 +149,21 @@ button {
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
-    flex: 30%;
-    min-height: 30px;
+    flex: 10%;
     overflow: hidden;
+    min-height: 20px;
 }
 
 .memory-ctl>div {
     width: 75px;
     margin: 0;
-    font-size: 1em;
 }
 
 .mem-btn {
     width: 100%;
     height: 100%;
     font-weight: 600;
+    font-size: 1em;
 }
 
 #mu-div {
@@ -174,20 +176,7 @@ button {
     padding: 0;
     font-size: 0.6em;
 }
-/*
-@media only screen and (min-height: 464px) {
-    .display-container {
-        height: 26vh;
-    }
-}
 
-@media only screen and (min-height: 750px) {
-    .display h1 {
-        font-size: 6em;
-        font-weight: 600;
-    }
-}
-*/
 /* history-bar styles */
 .title-container {
     display: block;
@@ -222,7 +211,7 @@ button {
 /* numpad styles */
 .number {
     background-color: var(--number);
-    font-size: 2.3em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 
@@ -233,19 +222,14 @@ button {
 }
 
 .operations-hover {
-    font-size: 3.5em;
+    font-size: 2.5em;
 }
 
 .operators {
-    font-size: 2.3em;
-}
-
-.x-operators {
-    font-size: 2em;
-}
-
-.bold-operators {
     font-size: 1.7em;
+}
+.bold-operators {
+    font-size: 1.2em;
     font-weight: 600;
 }
 
@@ -257,6 +241,111 @@ button {
     display: none;
 }
 /* adding necessary media queries */
+/* Changing font size */
+@media only screen and (min-height: 650px),
+only screen and (min-height: 650px) and (min-width: 1024px) {
+    #backspace {
+        width: 33px;
+    }
+    .mem-btn {
+        font-weight: 700;
+    }
+    .number {
+        font-size: 2.1em;
+    }
+    .non-number {
+        font-size: 1.7em;
+    }
+    .operations-hover {
+        font-size: 3.1em;
+    }
+    .operators {
+        font-size: 2.6em;
+    }
+    .bold-operators {
+        font-size: 1.7em;
+    }
+    .x-operators {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (min-height: 800px) and (min-width: 1500px) {
+    .mem-btn {
+        font-size: 1.1em;
+    }
+    .number {
+        font-size: 2.5em;
+    }
+    .operations-hover {
+        font-size: 3.5em;
+    }
+    .bold-operators {
+        font-size: 1.9em;
+    }
+    .x-operators {
+        font-size: 2.4em;
+    }
+    #minplus, #decimaldot, #squareroot, #percent {
+        font-weight: 600;
+    }
+    #decimaldot {
+        font-size: 2.6em;
+    }
+}
+
+/* changing display height */
+@media only screen and (min-height: 410px) {
+    body {
+        overflow: hidden;
+    }
+}
+@media only screen and (min-height: 430px) {
+    .display-container {
+        height: 33vh;
+    }
+    .display h1 {
+        padding: 3px 15px;
+    }
+}
+
+@media only screen and (min-height: 460px) {
+    .display-container {
+        height: 34vh;
+    }
+    nav {
+        height: 56px;
+    }
+    
+    .display {
+        flex: 70%;
+        height: auto;
+    }
+    
+    .display h1 {
+        padding: 6px 15px;
+    }
+    
+    .memory-ctl {
+        flex: 30%;
+        min-height: 30px;
+    }
+}    
+
+@media only screen and (min-height: 570px) {
+    .display-container {
+        height: 36vh;
+    }
+    .display h1 {
+        padding: 10px 15px;
+    }
+}
+
+@media only screen and (min-height: 800px) {
+    .display h1 {
+        font-size: 5.5em;
+    }
+}
 
 /* disapring history bar when window's width is less than 500px */
 @media only screen and (min-width: 525px) {
@@ -267,8 +356,10 @@ button {
         display: none;
     }
 }
+
 /* changin numpad layout from 4x46 to 5x5 */
 @media only screen and (min-width: 1024px) and (min-height: 620px) {
+
     #num-power3 {
         display: block;
     }
@@ -288,84 +379,11 @@ button {
         grid-template-columns: auto auto auto auto auto;
     }
 }
-/*
-@media only screen and (min-width: 560px) {
-
-    /* hide clock icon and memory button 
-    #mu-div,
-    #nav-time-machine {
+@media only screen and (min-width: 1024px) and (min-height: 650px) {
+    #maximize {
         display: none;
     }
-
-    .layout-right {
-        display: inline-block;
-        width: 320px;
-    }
-
-    .layout-main {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        clear: both;
-    }
-    .layout-bottom {
+    #restore-down {
         display: block;
     }
 }
-*/
-
-
-/* Defining grid area for reshaping numpad
-@media only screen and (min-width: 1020px) and (min-height: 640px) {
-    .num-per { grid-area: num-per; }
-    .num-sqr { grid-area: num-sqr; }
-    .num-power { grid-area: num-power; }
-    .num-power3 {
-        display: contents;
-        grid-area: num-power3;
-    }
-    .num-fraction { grid-area: num-fraction; }
-    .num-clt { grid-area: num-clt; }
-    .num-cle { grid-area: num-cle; }
-    .num-erase { grid-area: num-erase; }
-    .num-div { grid-area: num-div; }
-    .num-seven { grid-area: num-seven; }
-    .num-eight { grid-area: num-eight; }
-    .num-nine { grid-area: num-nine; }
-    .num-multi { grid-area: num-multi; }
-    .num-four { grid-area: num-four; }
-    .num-five { grid-area: num-five; }
-    .num-six { grid-area: num-six;}
-    .num-minus { grid-area: num-minus; }
-    .num-one { grid-area: num-one; }
-    .num-two { grid-area: num-two; }
-    .num-three { grid-area: num-three; }
-    .num-plus { grid-area: num-plus; }
-    .num-minplus { grid-area: num-minplus; }
-    .num-zero { grid-area: num-zero; }
-    .num-dot { grid-area: num-dot; }
-    .num-equal { grid-area: num-equal; }
-    .grid-nums {
-        grid-template-areas: 'num-per num-clt num-cle num-erase num-div'
-                            'num-sqr num-seven num-eight num-nine num-multi'
-                            'num-power num-four num-five num-six num-minus'
-                            'num-power3 num-one num-two num-three num-plus'
-                            'num-fraction num-minplus num-zero num-dot num-equal';
-    }
-}
-@media only screen and (min-width: 1200px) and (min-height: 700px) {
-    .number {
-            font-size: 2.2em;
-            font-weight: 600;
-        }
-    
-    .non-number {
-            font-size: 2.1em;
-            font-weight: 200;
-        }
-    .mem-btn {
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-}
- */
